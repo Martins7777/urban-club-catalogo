@@ -6,11 +6,43 @@
     <title>Urban Club | Oficial Store</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="estilos.css">
-    
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body { 
+            margin: 0; 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1a1a1a;
+        }
+
+        .aspect-product { 
+            aspect-ratio: 3 / 4; 
+        }
+
+        .no-scrollbar::-webkit-scrollbar { 
+            display: none; 
+        }
+        .no-scrollbar { 
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .animate-cart-in {
+            animation: slideInRight 0.3s ease-out forwards;
+        }
+
+        .skew-logo {
+            transform: translate(-50%, -50%) skewX(-10deg);
+        }
+    </style>
 </head>
 <body>
     <script src="productos.js"></script>
@@ -139,15 +171,15 @@
                 return (
                     <div className="flex flex-col md:flex-row h-screen w-full overflow-hidden bg-black relative">
                         <div onClick={() => setView('futbol')} className="relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-zinc-800">
-                            <div className="absolute inset-0 bg-blue-950/50 z-10 transition-colors group-hover:bg-blue-950/20"></div>
+                            <div className="absolute inset-0 bg-blue-900/40 z-10 transition-colors group-hover:bg-blue-900/20"></div>
                             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200')] bg-cover bg-center"></div>
                             <h2 className="relative z-20 h-full flex items-center justify-center text-white text-5xl font-black italic uppercase tracking-tighter transition-transform group-hover:scale-110">Todo Fútbol</h2>
                         </div>
                         
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 skew-x-[-10deg] z-30 bg-white text-black px-8 py-2 font-black text-2xl uppercase hidden md:block shadow-2xl">Urban Club</div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 skew-logo z-30 bg-white text-black px-8 py-2 font-black text-2xl uppercase hidden md:block shadow-2xl">Urban Club</div>
                         
                         <div onClick={() => setView('gym')} className="relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer overflow-hidden">
-                            <div className="absolute inset-0 bg-zinc-950/70 z-10 transition-colors group-hover:bg-zinc-950/40"></div>
+                            <div className="absolute inset-0 bg-zinc-900/60 z-10 transition-colors group-hover:bg-zinc-900/40"></div>
                             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000')] bg-cover bg-center"></div>
                             <h2 className="relative z-20 h-full flex items-center justify-center text-white text-5xl font-black italic uppercase tracking-tighter transition-transform group-hover:scale-110">Todo Gym</h2>
                         </div>

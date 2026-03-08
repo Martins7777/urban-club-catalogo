@@ -29,15 +29,6 @@ const footballProducts = [
         description: 'Las tradicionales rayas bianconeri con un toque moderno.'
     },
     {
-        id: 6,
-        name: 'Camiseta PSG Jordan',
-        price: 30.00,
-        category: 'Entrenamiento',
-        images: ['camiseta_psg.jpg', 'camiseta_psg2.jpg', 'camiseta_psg3.jpg'],
-        sizes: ['S', 'M', 'L', 'XL'],
-        description: 'Sudadera técnica de entrenamiento Jordan x PSG en negro.'
-    },
-    {
         id: 7,
         name: 'Camiseta Real Madrid 25/26 Especial Red Player',
         price: 30.00,
@@ -679,4 +670,5 @@ const gymProducts = [
         sizes: ['S', 'M', 'L'],
         description: 'Camiseta de estilo casual con rayas verticales.'
     }
+
 ];

@@ -601,7 +601,63 @@ const footballProducts = [
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Tottenham x Mikke Towers.'
-    }
+    },
+		{
+    id: 62,
+    name: 'Málaga Primera 25/26',
+    price: 30.00,
+    category: 'Camisetas',
+    images: [
+        'malaga primera 25-26.png'
+    ],
+    sizes: ['S','M','L','XL','XXL'],
+    description: 'Camiseta Málaga CF primera equipación temporada 25/26.'
+},
+{
+    id: 63,
+    name: 'Málaga Segunda 25/26',
+    price: 30.00,
+    category: 'Camisetas',
+    images: [
+        'malaga segunda 25-26.png'
+    ],
+    sizes: ['S','M','L','XL','XXL'],
+    description: 'Camiseta Málaga CF segunda equipación temporada 25/26.'
+},
+{
+    id: 64,
+    name: 'Málaga Tercera 25/26',
+    price: 30.00,
+    category: 'Camisetas',
+    images: [
+        'malaga tercera 25-26.png'
+    ],
+    sizes: ['S','M','L','XL','XXL'],
+    description: 'Camiseta Málaga CF tercera equipación temporada 25/26.'
+},
+{
+    id: 65,
+    name: 'Málaga Comic 25/26',
+    price: 30.00,
+    category: 'Camisetas',
+    images: [
+        'malaga comic 25-26.png'
+    ],
+    sizes: ['S','M','L','XL','XXL'],
+    description: 'Camiseta Málaga CF edición especial Comic 25/26.'
+},
+{
+    id: 66,
+    name: 'Málaga Sudadera Entrenamiento 25/26',
+    price: 30.00,
+    category: 'Entrenamiento',
+    images: [
+        'malaga sudadera entrenamiento 25-26.jpg',
+        'malaga entrenamiento 2.jpg'
+    ],
+    sizes: ['S','M','L','XL','XXL'],
+    description: 'Sudadera de entrenamiento Málaga CF temporada 25/26.'
+}
 ];
 
 const gymProducts = [

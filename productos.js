@@ -49,10 +49,10 @@ const footballProducts = [
     },
     { 
         id: 6, 
-        name: 'Sudadera Entreno PSG Jordan', 
+        name: 'Camiseta PSG', 
         price: 70.00, 
         category: 'Entrenamiento', 
-        images: ['psg_entreno.png'],
+        images: ['camiseta_psg.jpg','camiseta_psg2.jpg','camiseta_psg3.jpg'],
         sizes: ['S', 'M', 'L', 'XL'],
         description: 'Sudadera técnica de entrenamiento Jordan x PSG en negro.'
     }

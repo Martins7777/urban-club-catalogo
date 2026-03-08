@@ -4,28 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urban Club | Oficial Store</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
-        body { 
-            margin: 0; 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f8fafc; 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
             color: #1a1a1a;
         }
 
-        .aspect-product { 
-            aspect-ratio: 3 / 4; 
+        .aspect-product {
+            aspect-ratio: 3 / 4;
         }
 
-        .no-scrollbar::-webkit-scrollbar { 
-            display: none; 
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .no-scrollbar { 
+
+        .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
@@ -50,13 +55,179 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState } = React;
+        const { useState, useRef, useMemo } = React;
 
-        // --- Iconos ---
         const ShoppingBag = () => <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>;
         const ArrowLeft = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>;
         const X = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>;
         const Trash = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>;
+
+        const initialFormData = {
+            nombre: '',
+            direccion: '',
+            ciudad: '',
+            estado: '',
+            codigoPostal: '',
+            pais: '',
+            telefono: ''
+        };
+
+        const normalizeText = (text = '') => (
+            text
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+        );
+
+        const detectClubName = (productName = '') => {
+            const normalized = normalizeText(productName);
+
+            if (normalized.includes('real madrid')) return 'Real Madrid';
+            if (normalized.includes('barcelona')) return 'Barcelona FC';
+            if (normalized.includes('malaga')) return 'Málaga FC';
+            if (normalized.includes('juventus')) return 'Juventus';
+            if (normalized.includes('psg')) return 'PSG';
+            if (normalized.includes('alemania')) return 'Alemania';
+			if (normalized.includes('x')) return 'Colabs';
+
+            return 'Otros';
+        };
+
+        const escapeHtml = (text = '') => String(text)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+
+        const fileToDataUrl = (blob) => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+        });
+
+        const imageSrcToDataUrl = async (src) => {
+            try {
+                const response = await fetch(src);
+                if (!response.ok) throw new Error('No se pudo cargar la imagen');
+                const blob = await response.blob();
+                return await fileToDataUrl(blob);
+            } catch (error) {
+                return null;
+            }
+        };
+
+        function Navbar({ title, cartCount, onBack, onOpenCart }) {
+            return (
+                <nav className="sticky top-0 z-40 px-6 py-4 flex justify-between items-center bg-white border-b shadow-sm">
+                    <div className="flex items-center gap-4">
+                        <button onClick={onBack} className="p-2 hover:bg-gray-100 rounded-full"><ArrowLeft /></button>
+                        <span className="font-black text-xl italic uppercase tracking-tighter">{title}</span>
+                    </div>
+                    <button onClick={onOpenCart} className="relative p-3 bg-black text-white rounded-full transition-transform active:scale-90">
+                        <ShoppingBag />
+                        {cartCount > 0 && (
+                            <span className="absolute -top-1 -right-1 bg-red-600 text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white font-bold animate-bounce text-white">
+                                {cartCount}
+                            </span>
+                        )}
+                    </button>
+                </nav>
+            );
+        }
+
+        function CartPanel({
+            cart,
+            isCartOpen,
+            showForm,
+            setShowForm,
+            closeCart,
+            removeFromCart,
+            formData,
+            setFormData,
+            copyOrder
+        }) {
+            if (!isCartOpen) return null;
+
+            const handlePanelClick = (e) => {
+                e.stopPropagation();
+            };
+
+            const handleFieldChange = (field, value) => {
+                setFormData(prev => ({ ...prev, [field]: value }));
+            };
+
+            const formComplete = Object.values(formData).every(value => String(value).trim() !== '');
+
+            return (
+                <>
+                    <div className="fixed inset-0 bg-black/60 z-[60]" onClick={closeCart}></div>
+                    <div
+                        className="fixed top-0 right-0 h-full w-full max-w-md bg-white z-[70] shadow-2xl flex flex-col p-8 no-scrollbar animate-cart-in"
+                        onClick={handlePanelClick}
+                        onMouseDown={handlePanelClick}
+                        onTouchStart={handlePanelClick}
+                    >
+                        <div className="flex justify-between items-center mb-8 border-b-2 border-black pb-4">
+                            <h2 className="text-2xl font-black uppercase italic">Mi Cesta</h2>
+                            <button onClick={closeCart} className="p-2 hover:bg-gray-100 rounded-full"><X /></button>
+                        </div>
+
+                        <div className="flex-1 overflow-y-auto space-y-6 no-scrollbar">
+                            {cart.length === 0 ? (
+                                <div className="text-center py-20 opacity-30 font-black uppercase">Vacía</div>
+                            ) : (
+                                cart.map((item) => (
+                                    <div key={item.cartId} className="flex gap-4 items-center border-b border-gray-100 pb-4 relative group">
+                                        <img src={item.mainImg} className="w-16 h-20 object-cover rounded shadow-sm" />
+                                        <div className="flex-1">
+                                            <h4 className="font-black text-[10px] uppercase mb-1">{item.name}</h4>
+                                            <p className="text-[10px] font-bold text-gray-500">Talla producto: {item.tallaSelected}</p>
+                                        </div>
+                                        <button onClick={() => removeFromCart(item.cartId)} className="p-2 text-gray-400 hover:text-red-600 transition-colors"><Trash /></button>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+
+                        {cart.length > 0 && (
+                            <div className="pt-6 border-t-2 border-black mt-4">
+                                {!showForm ? (
+                                    <button onClick={() => setShowForm(true)} className="w-full bg-black text-white py-5 font-black uppercase tracking-widest shadow-lg">Continuar</button>
+                                ) : (
+                                    <div className="space-y-3">
+                                        <input type="text" placeholder="Nombre" value={formData.nombre} onChange={(e) => handleFieldChange('nombre', e.target.value)} className="w-full p-4 border-2 border-black font-bold text-sm outline-none" />
+                                        <input type="text" placeholder="Dirección" value={formData.direccion} onChange={(e) => handleFieldChange('direccion', e.target.value)} className="w-full p-4 border-2 border-black font-bold text-sm outline-none" />
+                                        <input type="text" placeholder="Ciudad" value={formData.ciudad} onChange={(e) => handleFieldChange('ciudad', e.target.value)} className="w-full p-4 border-2 border-black font-bold text-sm outline-none" />
+                                        <input type="text" placeholder="Estado" value={formData.estado} onChange={(e) => handleFieldChange('estado', e.target.value)} className="w-full p-4 border-2 border-black font-bold text-sm outline-none" />
+                                        <input type="text" placeholder="Código postal" value={formData.codigoPostal} onChange={(e) => handleFieldChange('codigoPostal', e.target.value)} className="w-full p-4 border-2 border-black font-bold text-sm outline-none" />
+                                        <input type="text" placeholder="País" value={formData.pais} onChange={(e) => handleFieldChange('pais', e.target.value)} className="w-full p-4 border-2 border-black font-bold text-sm outline-none" />
+                                        <input type="tel" placeholder="Número teléfono" value={formData.telefono} onChange={(e) => handleFieldChange('telefono', e.target.value)} className="w-full p-4 border-2 border-black font-bold text-sm outline-none" />
+
+                                        <button onClick={copyOrder} disabled={!formComplete} className="w-full bg-green-600 text-white py-5 font-black uppercase disabled:opacity-30">WhatsApp Pedido</button>
+                                        <button onClick={() => setShowForm(false)} className="w-full text-[10px] font-black uppercase text-gray-400 mt-2">Atrás</button>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </>
+            );
+        }
+
+        const ProductCard = ({ product, onOpen }) => (
+            <div className="group cursor-pointer" onClick={() => onOpen(product)}>
+                <div className="aspect-product overflow-hidden border mb-4 shadow-sm group-hover:shadow-xl transition-all relative">
+                    <img src={product.images[0]} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute bottom-0 left-0 right-0 bg-white/90 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform">
+                        <span className="text-[10px] font-black uppercase tracking-widest">Ver detalle</span>
+                    </div>
+                </div>
+                <h3 className="font-bold text-sm uppercase leading-tight mb-1 group-hover:underline">{product.name}</h3>
+                <p className="font-black text-lg">{product.price.toFixed(2)}€</p>
+            </div>
+        );
 
         const App = () => {
             const [view, setView] = useState('landing');
@@ -64,31 +235,100 @@
             const [cart, setCart] = useState([]);
             const [isCartOpen, setIsCartOpen] = useState(false);
             const [showForm, setShowForm] = useState(false);
-            const [formData, setFormData] = useState({ nombre: '', direccion: '' });
+            const [formData, setFormData] = useState(initialFormData);
             const [activeSize, setActiveSize] = useState('');
             const [currentImgIdx, setCurrentImgIdx] = useState(0);
+            const clubSectionsRef = useRef({});
 
             const addToCart = (product, size) => {
-                if(!size) return alert("Por favor, selecciona una talla");
-                const cartEntry = { ...product, tallaSelected: size, mainImg: product.images[0], cartId: Date.now() };
-                setCart([...cart, cartEntry]);
+                if (!size) return alert('Por favor, selecciona una talla');
+                const cartEntry = { ...product, tallaSelected: size, mainImg: product.images[0], cartId: Date.now() + Math.random() };
+                setCart(prev => [...prev, cartEntry]);
                 setIsCartOpen(true);
             };
 
             const removeFromCart = (cartId) => {
-                setCart(cart.filter(item => item.cartId !== cartId));
+                setCart(prev => prev.filter(item => item.cartId !== cartId));
             };
 
-            const cartTotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const closeCart = () => {
+                setIsCartOpen(false);
+                setShowForm(false);
+            };
 
-            const copyOrder = () => {
-                let text = `🚀 NUEVO PEDIDO - URBAN CLUB\n---------------------------\n`;
-                text += `👤 CLIENTE: ${formData.nombre}\n📍 ENVÍO: ${formData.direccion}\n---------------------------\n`;
-                cart.forEach((item, i) => {
-                    text += `${i+1}. ${item.name} | Talla: ${item.tallaSelected} | ${item.price.toFixed(2)}€\n`;
+            const copyOrder = async () => {
+                let plainText = `🚀 NUEVO PEDIDO - URBAN CLUB\n---------------------------\n`;
+                plainText += `👤 Nombre: ${formData.nombre}\n`;
+                plainText += `📍 Dirección: ${formData.direccion}\n`;
+                plainText += `🏙️ Ciudad: ${formData.ciudad}\n`;
+                plainText += `🗺️ Estado: ${formData.estado}\n`;
+                plainText += `📮 Código postal: ${formData.codigoPostal}\n`;
+                plainText += `🌍 País: ${formData.pais}\n`;
+                plainText += `📞 Número teléfono: ${formData.telefono}\n`;
+                plainText += `---------------------------\n`;
+
+                cart.forEach((item, index) => {
+                    plainText += `${index + 1}. ${item.name} | Talla producto: ${item.tallaSelected}\n`;
                 });
-                text += `---------------------------\n💰 TOTAL: ${cartTotal.toFixed(2)}€`;
-                navigator.clipboard.writeText(text).then(() => alert("✅ Pedido copiado. ¡Pégalo en WhatsApp!"));
+
+                let html = `
+                    <div style="font-family: Arial, sans-serif; color: #111; line-height: 1.4;">
+                        <div style="font-weight: 800; font-size: 18px; margin-bottom: 12px;">🚀 NUEVO PEDIDO - URBAN CLUB</div>
+                        <div style="border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px;">
+                            <div><strong>👤 Nombre:</strong> ${escapeHtml(formData.nombre)}</div>
+                            <div><strong>📍 Dirección:</strong> ${escapeHtml(formData.direccion)}</div>
+                            <div><strong>🏙️ Ciudad:</strong> ${escapeHtml(formData.ciudad)}</div>
+                            <div><strong>🗺️ Estado:</strong> ${escapeHtml(formData.estado)}</div>
+                            <div><strong>📮 Código postal:</strong> ${escapeHtml(formData.codigoPostal)}</div>
+                            <div><strong>🌍 País:</strong> ${escapeHtml(formData.pais)}</div>
+                            <div><strong>📞 Número teléfono:</strong> ${escapeHtml(formData.telefono)}</div>
+                        </div>
+                        <div style="border-top: 1px solid #ddd; margin-top: 12px; padding-top: 12px;">
+                `;
+
+                const cartWithImages = await Promise.all(
+                    cart.map(async (item) => ({
+                        ...item,
+                        inlineImage: await imageSrcToDataUrl(item.mainImg)
+                    }))
+                );
+
+                cartWithImages.forEach((item, index) => {
+                    plainText += item.inlineImage ? `[Imagen incluida en versión enriquecida del portapapeles]\n` : '';
+
+                    html += `
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
+                            ${item.inlineImage ? `<img src="${item.inlineImage}" alt="${escapeHtml(item.name)}" style="width: 56px; height: 72px; object-fit: cover; border: 1px solid #ddd; border-radius: 4px; flex-shrink: 0;" />` : ''}
+                            <div>
+                                <div style="font-weight: 700;">${index + 1}. ${escapeHtml(item.name)}</div>
+                                <div style="font-size: 13px; color: #555;">Talla producto: ${escapeHtml(item.tallaSelected)}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += '</div></div>';
+
+                try {
+                    if (window.ClipboardItem && navigator.clipboard?.write) {
+                        const clipboardItem = new ClipboardItem({
+                            'text/plain': new Blob([plainText], { type: 'text/plain' }),
+                            'text/html': new Blob([html], { type: 'text/html' })
+                        });
+                        await navigator.clipboard.write([clipboardItem]);
+                    } else {
+                        await navigator.clipboard.writeText(plainText);
+                    }
+
+                    alert('✅ Pedido copiado. Si WhatsApp o tu app admite pegado enriquecido, también verá las miniaturas de las camisetas.');
+                } catch (error) {
+                    try {
+                        await navigator.clipboard.writeText(plainText);
+                        alert('✅ Pedido copiado en texto. Tu navegador no permitió copiar la versión con imágenes.');
+                    } catch (fallbackError) {
+                        alert('No se pudo copiar el pedido.');
+                    }
+                }
             };
 
             const openProduct = (product, prevView) => {
@@ -98,74 +338,44 @@
                 setView('product');
             };
 
-            const Navbar = ({ title }) => (
-                <nav className="sticky top-0 z-40 px-6 py-4 flex justify-between items-center bg-white border-b shadow-sm">
-                    <div className="flex items-center gap-4">
-                        <button onClick={() => {
-                            if(view === 'product') setView(selectedProduct.prevView);
-                            else setView('landing');
-                        }} className="p-2 hover:bg-gray-100 rounded-full"><ArrowLeft /></button>
-                        <span className="font-black text-xl italic uppercase tracking-tighter">{title}</span>
-                    </div>
-                    <button onClick={() => setIsCartOpen(true)} className="relative p-3 bg-black text-white rounded-full transition-transform active:scale-90">
-                        <ShoppingBag />
-                        {cart.length > 0 && (
-                            <span className="absolute -top-1 -right-1 bg-red-600 text-[10px] w-5 h-5 flex items-center justify-center rounded-full border-2 border-white font-bold animate-bounce text-white">
-                                {cart.length}
-                            </span>
-                        )}
-                    </button>
-                </nav>
-            );
+            const handleBack = () => {
+                if (view === 'product' && selectedProduct) {
+                    setView(selectedProduct.prevView);
+                } else {
+                    setView('landing');
+                }
+            };
 
-            function CartPanel() {
-                return (
-                    <>
-                        <div className="fixed inset-0 bg-black/60 z-[60]" onClick={() => {setIsCartOpen(false); setShowForm(false);}}></div>
-                        <div className="fixed top-0 right-0 h-full w-full max-w-md bg-white z-[70] shadow-2xl flex flex-col p-8 no-scrollbar animate-cart-in">
-                            <div className="flex justify-between items-center mb-8 border-b-2 border-black pb-4">
-                                <h2 className="text-2xl font-black uppercase italic">Mi Cesta</h2>
-                                <button onClick={() => {setIsCartOpen(false); setShowForm(false);}} className="p-2 hover:bg-gray-100 rounded-full"><X /></button>
-                            </div>
-                            <div className="flex-1 overflow-y-auto space-y-6 no-scrollbar">
-                                {cart.length === 0 ? (
-                                    <div className="text-center py-20 opacity-30 font-black uppercase">Vacía</div>
-                                ) : (
-                                    cart.map((item) => (
-                                        <div key={item.cartId} className="flex gap-4 items-center border-b border-gray-100 pb-4 relative group">
-                                            <img src={item.mainImg} className="w-16 h-20 object-cover rounded shadow-sm" />
-                                            <div className="flex-1">
-                                                <h4 className="font-black text-[10px] uppercase mb-1">{item.name}</h4>
-                                                <p className="text-[10px] font-bold text-gray-500">Talla: {item.tallaSelected}</p>
-                                                <p className="font-black text-sm mt-1">{item.price.toFixed(2)}€</p>
-                                            </div>
-                                            <button onClick={() => removeFromCart(item.cartId)} className="p-2 text-gray-400 hover:text-red-600 transition-colors"><Trash /></button>
-                                        </div>
-                                    ))
-                                )}
-                            </div>
-                            {cart.length > 0 && (
-                                <div className="pt-6 border-t-2 border-black mt-4">
-                                    <div className="flex justify-between mb-4 font-black uppercase italic">
-                                        <span>Total:</span>
-                                        <span>{cartTotal.toFixed(2)}€</span>
-                                    </div>
-                                    {!showForm ? (
-                                        <button onClick={() => setShowForm(true)} className="w-full bg-black text-white py-5 font-black uppercase tracking-widest shadow-lg">Continuar</button>
-                                    ) : (
-                                        <div className="space-y-4">
-                                            <input type="text" placeholder="Nombre completo" className="w-full p-4 border-2 border-black font-bold text-sm outline-none" onChange={(e) => setFormData({...formData, nombre: e.target.value})} />
-                                            <textarea placeholder="Dirección y teléfono" className="w-full p-4 border-2 border-black font-bold text-sm h-24 outline-none" onChange={(e) => setFormData({...formData, direccion: e.target.value})}></textarea>
-                                            <button onClick={copyOrder} disabled={!formData.nombre || !formData.direccion} className="w-full bg-green-600 text-white py-5 font-black uppercase disabled:opacity-30">WhatsApp Pedido</button>
-                                            <button onClick={() => setShowForm(false)} className="w-full text-[10px] font-black uppercase text-gray-400 mt-2">Atrás</button>
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div>
-                    </>
-                );
-            }
+            const products = view === 'futbol' ? footballProducts : gymProducts;
+
+            const footballSections = useMemo(() => {
+                if (view !== 'futbol') return [];
+
+                const grouped = footballProducts.reduce((acc, product) => {
+                    const club = detectClubName(product.name);
+                    if (!acc[club]) acc[club] = [];
+                    acc[club].push(product);
+                    return acc;
+                }, {});
+
+                const preferredOrder = ['Real Madrid', 'Barcelona FC', 'Málaga FC', 'Juventus', 'PSG', 'Alemania', 'Colabs', 'Otros'];
+                return preferredOrder
+                    .filter(club => grouped[club]?.length)
+                    .map(club => ({ club, products: grouped[club] }));
+            }, [view]);
+
+            const scrollToClubSection = (club) => {
+                const target = clubSectionsRef.current[club];
+                if (!target) return;
+
+                const navbarOffset = 170;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarOffset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            };
 
             if (view === 'landing') {
                 return (
@@ -175,15 +385,26 @@
                             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200')] bg-cover bg-center"></div>
                             <h2 className="relative z-20 h-full flex items-center justify-center text-white text-5xl font-black italic uppercase tracking-tighter transition-transform group-hover:scale-110">Todo Fútbol</h2>
                         </div>
-                        
+
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 skew-logo z-30 bg-white text-black px-8 py-2 font-black text-2xl uppercase hidden md:block shadow-2xl">Urban Club</div>
-                        
+
                         <div onClick={() => setView('gym')} className="relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer overflow-hidden">
                             <div className="absolute inset-0 bg-zinc-900/60 z-10 transition-colors group-hover:bg-zinc-900/40"></div>
                             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000')] bg-cover bg-center"></div>
                             <h2 className="relative z-20 h-full flex items-center justify-center text-white text-5xl font-black italic uppercase tracking-tighter transition-transform group-hover:scale-110">Todo Gym</h2>
                         </div>
-                        {isCartOpen && <CartPanel />}
+
+                        <CartPanel
+                            cart={cart}
+                            isCartOpen={isCartOpen}
+                            showForm={showForm}
+                            setShowForm={setShowForm}
+                            closeCart={closeCart}
+                            removeFromCart={removeFromCart}
+                            formData={formData}
+                            setFormData={setFormData}
+                            copyOrder={copyOrder}
+                        />
                     </div>
                 );
             }
@@ -191,7 +412,12 @@
             if (view === 'product' && selectedProduct) {
                 return (
                     <div className="min-h-screen bg-white">
-                        <Navbar title="Detalle" />
+                        <Navbar
+                            title="Detalle"
+                            cartCount={cart.length}
+                            onBack={handleBack}
+                            onOpenCart={() => setIsCartOpen(true)}
+                        />
                         <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-12">
                             <div className="space-y-4">
                                 <div className="aspect-product bg-gray-100 rounded-xl overflow-hidden shadow-inner">
@@ -225,34 +451,99 @@
                                 </button>
                             </div>
                         </div>
-                        {isCartOpen && <CartPanel />}
+
+                        <CartPanel
+                            cart={cart}
+                            isCartOpen={isCartOpen}
+                            showForm={showForm}
+                            setShowForm={setShowForm}
+                            closeCart={closeCart}
+                            removeFromCart={removeFromCart}
+                            formData={formData}
+                            setFormData={setFormData}
+                            copyOrder={copyOrder}
+                        />
                     </div>
                 );
             }
 
-            const products = view === 'futbol' ? footballProducts : gymProducts;
-
             return (
                 <div className="min-h-screen flex flex-col">
-                    <Navbar title={view === 'futbol' ? 'Todo Fútbol' : 'Todo Gym'} />
+                    <Navbar
+                        title={view === 'futbol' ? 'Todo Fútbol' : 'Todo Gym'}
+                        cartCount={cart.length}
+                        onBack={handleBack}
+                        onOpenCart={() => setIsCartOpen(true)}
+                    />
+
                     <header className="px-6 py-10 bg-white text-center border-b border-gray-100">
                         <h2 className="text-4xl font-black uppercase italic tracking-tighter">{view === 'futbol' ? 'Fútbol' : 'Gym'}</h2>
                     </header>
-                    <main className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8 flex-1">
-                        {products.map((p) => (
-                            <div key={p.id} className="group cursor-pointer" onClick={() => openProduct(p, view)}>
-                                <div className="aspect-product overflow-hidden border mb-4 shadow-sm group-hover:shadow-xl transition-all relative">
-                                    <img src={p.images[0]} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                                    <div className="absolute bottom-0 left-0 right-0 bg-white/90 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform">
-                                        <span className="text-[10px] font-black uppercase tracking-widest">Ver detalle</span>
-                                    </div>
-                                </div>
-                                <h3 className="font-bold text-sm uppercase leading-tight mb-1 group-hover:underline">{p.name}</h3>
-                                <p className="font-black text-lg">{p.price.toFixed(2)}€</p>
+
+                    {view === 'futbol' && footballSections.length > 0 && (
+                        <div className="sticky top-[73px] z-30 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+                            <div className="max-w-7xl mx-auto px-6 py-4 flex gap-8 overflow-x-auto no-scrollbar justify-start lg:justify-center">
+                                {footballSections.map(({ club }) => (
+                                    <button
+                                        key={club}
+                                        onClick={() => scrollToClubSection(club)}
+                                        className="whitespace-nowrap text-2xl font-black tracking-tight text-gray-400 hover:text-black transition-colors"
+                                    >
+                                        {club}
+                                    </button>
+                                ))}
                             </div>
-                        ))}
-                    </main>
-                    {isCartOpen && <CartPanel />}
+                        </div>
+                    )}
+
+                    {view === 'futbol' ? (
+                        <main className="max-w-7xl mx-auto px-6 py-12 flex-1 w-full space-y-14">
+                            {footballSections.map(({ club, products: clubProducts }) => (
+                                <section
+                                    key={club}
+                                    ref={(element) => {
+                                        if (element) clubSectionsRef.current[club] = element;
+                                    }}
+                                    className="scroll-mt-44"
+                                >
+                                    <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-8 border-b-4 border-black inline-block">
+                                        {club}
+                                    </h3>
+                                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                                        {clubProducts.map((product) => (
+                                            <ProductCard
+                                                key={product.id}
+                                                product={product}
+                                                onOpen={(selected) => openProduct(selected, view)}
+                                            />
+                                        ))}
+                                    </div>
+                                </section>
+                            ))}
+                        </main>
+                    ) : (
+                        <main className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8 flex-1 w-full">
+                            {products.map((product) => (
+                                <ProductCard
+                                    key={product.id}
+                                    product={product}
+                                    onOpen={(selected) => openProduct(selected, view)}
+                                />
+                            ))}
+                        </main>
+                    )}
+
+                    <CartPanel
+                        cart={cart}
+                        isCartOpen={isCartOpen}
+                        showForm={showForm}
+                        setShowForm={setShowForm}
+                        closeCart={closeCart}
+                        removeFromCart={removeFromCart}
+                        formData={formData}
+                        setFormData={setFormData}
+                        copyOrder={copyOrder}
+                    />
                 </div>
             );
         };

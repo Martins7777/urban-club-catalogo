@@ -2,34 +2,79 @@
 
 const footballProducts = [
     {
-        id: 1,
-        name: 'Real Madrid Blanca 24/25',
+        name: 'Real Madrid primera 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['real_madrid_blanca.jpg'],
+        images: ['real_madrid_primera.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'La equipación clásica del Rey de Europa. Tejido transpirable premium.'
     },
-    {
-        id: 2,
-        name: 'Real Madrid Azul HP Edition',
+	{
+        name: 'Real Madrid segunda 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['real_madrid_azul.jpg'],
+        images: ['real_madrid_segunda.jpg'],
         sizes: ['M', 'L', 'XL'],
-        description: 'Segunda equipación temporada 24/25 con detalles en blanco y patrocinio HP.'
+        description: 'Segunda equipación temporada 25/26 con detalles en blanco y patrocinio HP.'
     },
-    {
-        id: 4,
-        name: 'Juventus Local 24/25',
+	{
+        name: 'Real Madrid tercera 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['juventus_local.jpg'],
-        sizes: ['S', 'M', 'L', 'XL'],
-        description: 'Las tradicionales rayas bianconeri con un toque moderno.'
+        images: ['real_madrid_tercera.jpg'],
+        sizes: ['M', 'L', 'XL'],
+        description: 'Tercera equipación temporada 25/26 con detalles en blanco y patrocinio HP.'
     },
+	{
+        name: 'Real Madrid kids 25/26',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['real_madrid_kids.jpg'],
+        sizes: ['M', 'L', 'XL'],
+        description: 'Tercera equipación temporada 25/26 con detalles en blanco y patrocinio HP.'
+    },
+	{
+		name: 'Barcelona FC Primera 25/26',
+		price: 30.00,
+		category: 'Camisetas',
+		images: [
+			'barca_primera.JPG',
+			'barca_primera_2.JPG'
+		],
+		sizes: ['S','M','L','XL','XXL'],
+		description: 'Camiseta FC Barcelona primera equipación 25/26.'
+	},
+	{
+		name: 'Barcelona FC Segunda 25/26',
+		price: 30.00,
+		category: 'Camisetas',
+		images: [
+			'barca_segunda.JPG',
+			'barca_segunda_2.JPG'
+		],
+		sizes: ['S','M','L','XL','XXL'],
+		description: 'Camiseta FC Barcelona segunda equipación 25/26.'
+	},
+	{
+		name: 'Barcelona FC Tercera 25/26',
+		price: 30.00,
+		category: 'Camisetas',
+		images: [
+			'barca_tercera_2.JPG',
+			'barca_tercera.JPG'
+		],
+		sizes: ['S','M','L','XL','XXL'],
+		description: 'Camiseta FC Barcelona tercera equipación 25/26.'
+	},
+		{
+		name: 'Barcelona FC kids 25/26',
+		price: 30.00,
+		category: 'Camisetas',
+		images: ['barca_kids.JPG'],
+		sizes: ['S','M','L','XL','XXL'],
+		description: 'Camiseta FC Barcelona kids equipación 25/26.'
+	},
     {
-        id: 7,
         name: 'Camiseta Real Madrid 25/26 Especial Red Player',
         price: 30.00,
         category: 'Camisetas',
@@ -42,7 +87,6 @@ const footballProducts = [
         description: 'Edición Especial Red Player. Calidad premium con acabados profesionales.'
     },
     {
-        id: 8,
         name: 'Camiseta Real Madrid 25/26 Black Orange',
         price: 30.00,
         category: 'Camisetas',
@@ -54,7 +98,6 @@ const footballProducts = [
         description: 'Diseño negro con detalles naranjas y estética agresiva.'
     },
     {
-        id: 9,
         name: 'Polo Real Madrid Negro',
         price: 30.00,
         category: 'Streetwear',
@@ -63,7 +106,6 @@ const footballProducts = [
         description: 'Polo de paseo en negro con estética minimalista y escudo del club.'
     },
     {
-        id: 10,
         name: 'Camiseta Real Madrid Black Retro Edition 25/26',
         price: 30.00,
         category: 'Retro Edition',
@@ -72,7 +114,6 @@ const footballProducts = [
         description: 'Versión retro en negro con patrón geométrico y detalles clásicos.'
     },
     {
-        id: 11,
         name: 'Camiseta Real Madrid Blue Icon 25/26',
         price: 30.00,
         category: 'Camisetas',
@@ -81,16 +122,6 @@ const footballProducts = [
         description: 'Edición azul de manga larga con inspiración lifestyle.'
     },
     {
-        id: 12,
-        name: 'Camiseta Real Madrid Azul',
-        price: 30.00,
-        category: 'Camisetas',
-        images: ['cami_realmadrid_azul_1.jpeg'],
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        description: 'Camiseta azul del Real Madrid con detalles en blanco.'
-    },
-    {
-        id: 13,
         name: 'Camiseta Real Madrid Blanca',
         price: 30.00,
         category: 'Camisetas',
@@ -99,7 +130,6 @@ const footballProducts = [
         description: 'Versión blanca clásica con vivos en cuello y mangas.'
     },
     {
-        id: 14,
         name: 'Camiseta Real Madrid Pink Player Edition 25/26',
         price: 30.00,
         category: 'Camisetas',
@@ -111,7 +141,6 @@ const footballProducts = [
         description: 'Player Edition en rosa con patrón chevron y acabado premium.'
     },
     {
-        id: 15,
         name: 'Polo Real Madrid Azul',
         price: 30.00,
         category: 'Streetwear',
@@ -120,7 +149,6 @@ const footballProducts = [
         description: 'Polo azul de paseo con escudo frontal y look casual.'
     },
     {
-        id: 16,
         name: 'Polo Real Madrid 25/26 Black',
         price: 30.00,
         category: 'Streetwear',
@@ -129,7 +157,6 @@ const footballProducts = [
         description: 'Polo negro 25/26 con branding frontal y estilo urbano.'
     },
     {
-        id: 17,
         name: 'Polo Real Madrid 26/27 Retro',
         price: 30.00,
         category: 'Streetwear',
@@ -138,7 +165,6 @@ const footballProducts = [
         description: 'Polo estampado 26/27 con acabado premium y diseño exclusivo.'
     },
     {
-        id: 18,
         name: 'Camiseta Real Madrid Purple Edition 25/26',
         price: 30.00,
         category: 'Camisetas',
@@ -147,7 +173,6 @@ const footballProducts = [
         description: 'Edición morada 25/26 con patrón geométrico y detalles dorados.'
     },
     {
-        id: 19,
         name: 'Camiseta Real Madrid Training 26/27',
         price: 30.00,
         category: 'Entrenamiento',
@@ -158,7 +183,6 @@ const footballProducts = [
 
     // --- COLABS ---
     {
-        id: 20,
         name: 'Inter de Milan x Cruz Cafuné',
         price: 30.00,
         category: 'COLABS',
@@ -172,7 +196,6 @@ const footballProducts = [
         description: 'Colaboración Inter de Milan x Cruz Cafuné.'
     },
     {
-        id: 22,
         name: 'AC Milan x Bad Bunny',
         price: 30.00,
         category: 'COLABS',
@@ -184,7 +207,6 @@ const footballProducts = [
         description: 'Colaboración AC Milan x Bad Bunny.'
     },
     {
-        id: 23,
         name: 'AC Milan x Bryant Myers',
         price: 30.00,
         category: 'COLABS',
@@ -196,7 +218,6 @@ const footballProducts = [
         description: 'Colaboración AC Milan x Bryant Myers.'
     },
     {
-        id: 24,
         name: 'Almería x FVF',
         price: 30.00,
         category: 'COLABS',
@@ -208,7 +229,6 @@ const footballProducts = [
         description: 'Colaboración Almería x FVF.'
     },
     {
-        id: 25,
         name: 'Anuel AA x Paris Saint Germain',
         price: 30.00,
         category: 'COLABS',
@@ -220,19 +240,6 @@ const footballProducts = [
         description: 'Colaboración PSG x Anuel AA.'
     },
     {
-        id: 26,
-        name: 'Anuel x Málaga',
-        price: 30.00,
-        category: 'COLABS',
-        images: [
-            'anuel x malaga.png',
-            'anuel x malaga detras.png'
-        ],
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        description: 'Colaboración Málaga x Anuel.'
-    },
-    {
-        id: 27,
         name: 'AS Roma x Noriel Trap Capos',
         price: 30.00,
         category: 'COLABS',
@@ -241,7 +248,6 @@ const footballProducts = [
         description: 'Colaboración AS Roma x Noriel Trap Capos.'
     },
     {
-        id: 28,
         name: 'Aston Villa x Feid Ferxo',
         price: 30.00,
         category: 'COLABS',
@@ -253,7 +259,6 @@ const footballProducts = [
         description: 'Colaboración Aston Villa x Feid Ferxo.'
     },
     {
-        id: 29,
         name: 'Atlético de Madrid x Cano',
         price: 30.00,
         category: 'COLABS',
@@ -265,7 +270,6 @@ const footballProducts = [
         description: 'Colaboración Atlético de Madrid x Cano.'
     },
     {
-        id: 30,
         name: 'Atlético de Madrid x JC Reyes',
         price: 30.00,
         category: 'COLABS',
@@ -274,7 +278,6 @@ const footballProducts = [
         description: 'Colaboración Atlético de Madrid x JC Reyes.'
     },
     {
-        id: 31,
         name: 'Athletic Club Bilbao x Mora',
         price: 30.00,
         category: 'COLABS',
@@ -286,7 +289,6 @@ const footballProducts = [
         description: 'Colaboración Athletic Club Bilbao x Mora.'
     },
     {
-        id: 32,
         name: 'Boca Juniors x Trueno Amarilla',
         price: 30.00,
         category: 'COLABS',
@@ -298,7 +300,6 @@ const footballProducts = [
         description: 'Colaboración Boca Juniors x Trueno en variante amarilla.'
     },
     {
-        id: 33,
         name: 'Barça x J Creyes',
         price: 30.00,
         category: 'COLABS',
@@ -310,7 +311,6 @@ const footballProducts = [
         description: 'Colaboración Barça x J Creyes.'
     },
     {
-        id: 34,
         name: 'Bayer de Munich x Anuel AA',
         price: 30.00,
         category: 'COLABS',
@@ -319,7 +319,6 @@ const footballProducts = [
         description: 'Colaboración Bayer de Munich x Anuel AA.'
     },
     {
-        id: 35,
         name: 'Bichota x Juventus',
         price: 30.00,
         category: 'COLABS',
@@ -328,7 +327,6 @@ const footballProducts = [
         description: 'Colaboración Juventus x Bichota.'
     },
     {
-        id: 36,
         name: 'Boca Juniors x Paulo Londra',
         price: 30.00,
         category: 'COLABS',
@@ -337,7 +335,6 @@ const footballProducts = [
         description: 'Colaboración Boca Juniors x Paulo Londra.'
     },
     {
-        id: 37,
         name: 'Boca Juniors x Trueno Azul',
         price: 30.00,
         category: 'COLABS',
@@ -350,7 +347,6 @@ const footballProducts = [
         description: 'Colaboración Boca Juniors x Trueno en variante azul.'
     },
     {
-        id: 38,
         name: 'Celta de Vigo x C Tangana',
         price: 30.00,
         category: 'COLABS',
@@ -362,7 +358,6 @@ const footballProducts = [
         description: 'Colaboración Celta de Vigo x C Tangana.'
     },
     {
-        id: 39,
         name: 'Celta de Vigo Black x C Tangana',
         price: 30.00,
         category: 'COLABS',
@@ -371,7 +366,6 @@ const footballProducts = [
         description: 'Edición black de la colaboración Celta de Vigo x C Tangana.'
     },
     {
-        id: 40,
         name: 'Chelsea x Kid Keo',
         price: 30.00,
         category: 'COLABS',
@@ -383,7 +377,6 @@ const footballProducts = [
         description: 'Colaboración Chelsea x Kid Keo.'
     },
     {
-        id: 41,
         name: 'Chelsea x Mike Towers',
         price: 30.00,
         category: 'COLABS',
@@ -395,7 +388,6 @@ const footballProducts = [
         description: 'Colaboración Chelsea x Mike Towers.'
     },
     {
-        id: 42,
         name: 'Chelsea x Rau Alejandrp',
         price: 30.00,
         category: 'COLABS',
@@ -404,16 +396,6 @@ const footballProducts = [
         description: 'Colaboración Chelsea x Rau Alejandrp.'
     },
     {
-        id: 43,
-        name: 'Delaossa x Málaga',
-        price: 30.00,
-        category: 'COLABS',
-        images: ['malaga x delaossa.png', 'malaga x delaossa detras.png'],
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        description: 'Colaboración Málaga x Delaossa.'
-    },
-    {
-        id: 44,
         name: 'Dellafuente x Madrid',
         price: 30.00,
         category: 'COLABS',
@@ -422,7 +404,6 @@ const footballProducts = [
         description: 'Colaboración Madrid x Dellafuente.'
     },
     {
-        id: 45,
         name: 'España x Topuria',
         price: 30.00,
         category: 'COLABS',
@@ -434,7 +415,6 @@ const footballProducts = [
         description: 'Colaboración España x Topuria.'
     },
     {
-        id: 46,
         name: 'FC Barcelona x Travis Scott',
         price: 30.00,
         category: 'COLABS',
@@ -446,7 +426,6 @@ const footballProducts = [
         description: 'Colaboración FC Barcelona x Travis Scott.'
     },
     {
-        id: 47,
         name: 'Flamengo x Dellafuente',
         price: 30.00,
         category: 'COLABS',
@@ -459,7 +438,6 @@ const footballProducts = [
         description: 'Colaboración Flamengo x Dellafuente.'
     },
     {
-        id: 48,
         name: 'Gran Canarias x Quevedo',
         price: 30.00,
         category: 'COLABS',
@@ -471,7 +449,6 @@ const footballProducts = [
         description: 'Colaboración Gran Canarias x Quevedo.'
     },
     {
-        id: 49,
         name: 'Granada x Saiko',
         price: 30.00,
         category: 'COLABS',
@@ -483,7 +460,6 @@ const footballProducts = [
         description: 'Colaboración Granada x Saiko.'
     },
     {
-        id: 50,
         name: 'Inter de Miami x Jhayco',
         price: 30.00,
         category: 'COLABS',
@@ -495,7 +471,6 @@ const footballProducts = [
         description: 'Colaboración Inter de Miami x Jhayco.'
     },
     {
-        id: 51,
         name: 'Inter Miami x Myke Towers',
         price: 30.00,
         category: 'COLABS',
@@ -507,7 +482,6 @@ const footballProducts = [
         description: 'Colaboración Inter Miami x Myke Towers.'
     },
     {
-        id: 52,
         name: 'Juventus x Karol G',
         price: 30.00,
         category: 'COLABS',
@@ -516,7 +490,6 @@ const footballProducts = [
         description: 'Colaboración Juventus x Karol G.'
     },
     {
-        id: 53,
         name: 'Madrid 25/26 x Dellafuente',
         price: 30.00,
         category: 'COLABS',
@@ -525,7 +498,6 @@ const footballProducts = [
         description: 'Colaboración Madrid 25/26 x Dellafuente.'
     },
     {
-        id: 55,
         name: 'Manchester City x Ozuna',
         price: 30.00,
         category: 'COLABS',
@@ -534,25 +506,14 @@ const footballProducts = [
         description: 'Colaboración Manchester City x Ozuna.'
     },
     {
-        id: 56,
-        name: 'Pais x Bad Bunny',
-        price: 30.00,
-        category: 'COLABS',
-        images: ['pais x bad bunny.png'],
-        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-        description: 'Colaboración Pais x Bad Bunny.'
-    },
-    {
-        id: 57,
         name: 'Paris x Bad Bunny',
         price: 30.00,
         category: 'COLABS',
-        images: ['paris x bad bunny.png'],
+        images: ['paris x bad bunny.png','pais x bad bunny.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Paris x Bad Bunny.'
     },
     {
-        id: 58,
         name: 'Real Madrid x Bad Bunny',
         price: 30.00,
         category: 'COLABS',
@@ -561,7 +522,6 @@ const footballProducts = [
         description: 'Colaboración Real Madrid x Bad Bunny.'
     },
     {
-        id: 59,
         name: 'Selección USA x Travis Scott',
         price: 30.00,
         category: 'COLABS',
@@ -573,7 +533,6 @@ const footballProducts = [
         description: 'Colaboración Selección USA x Travis Scott.'
     },
     {
-        id: 60,
         name: 'Tenerife x Cruz Cafune',
         price: 30.00,
         category: 'COLABS',
@@ -582,7 +541,6 @@ const footballProducts = [
         description: 'Colaboración Tenerife x Cruz Cafune.'
     },
     {
-        id: 61,
         name: 'Tottenham x Mikke Towers',
         price: 30.00,
         category: 'COLABS',
@@ -593,8 +551,7 @@ const footballProducts = [
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Tottenham x Mikke Towers.'
     },
-		{
-    id: 62,
+	{
     name: 'Málaga Primera 25/26',
     price: 30.00,
     category: 'Camisetas',
@@ -603,9 +560,8 @@ const footballProducts = [
     ],
     sizes: ['S','M','L','XL','XXL'],
     description: 'Camiseta Málaga CF primera equipación temporada 25/26.'
-},
-{
-    id: 63,
+	},
+	{
     name: 'Málaga Segunda 25/26',
     price: 30.00,
     category: 'Camisetas',
@@ -614,9 +570,8 @@ const footballProducts = [
     ],
     sizes: ['S','M','L','XL','XXL'],
     description: 'Camiseta Málaga CF segunda equipación temporada 25/26.'
-},
-{
-    id: 64,
+	},
+	{
     name: 'Málaga Tercera 25/26',
     price: 30.00,
     category: 'Camisetas',
@@ -625,9 +580,35 @@ const footballProducts = [
     ],
     sizes: ['S','M','L','XL','XXL'],
     description: 'Camiseta Málaga CF tercera equipación temporada 25/26.'
-},
-{
-    id: 65,
+	},
+	{
+    name: 'Málaga kids 25/26',
+    price: 30.00,
+    category: 'Camisetas',
+    images: ['malaga_kids.jpg'],
+    sizes: ['S','M','L','XL','XXL'],
+    description: 'Camiseta Málaga CF kids primera equipación temporada 25/26.'
+	},
+	{
+        name: 'MALAGA X ANUEL',
+        price: 30.00,
+        category: 'COLABS',
+        images: [
+            'anuel x malaga.png',
+            'anuel x malaga detras.png'
+        ],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Colaboración Málaga x Anuel.'
+    },
+	    {
+        name: 'MALAGA X DELAOSSA',
+        price: 30.00,
+        category: 'COLABS',
+        images: ['malaga x delaossa.png', 'malaga x delaossa detras.png'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Colaboración Málaga x Delaossa.'
+    },
+	{
     name: 'Málaga Comic 25/26',
     price: 30.00,
     category: 'Camisetas',
@@ -636,9 +617,8 @@ const footballProducts = [
     ],
     sizes: ['S','M','L','XL','XXL'],
     description: 'Camiseta Málaga CF edición especial Comic 25/26.'
-},
-{
-    id: 66,
+	},
+	{
     name: 'Málaga Sudadera Entrenamiento 25/26',
     price: 30.00,
     category: 'Entrenamiento',
@@ -648,12 +628,11 @@ const footballProducts = [
     ],
     sizes: ['S','M','L','XL','XXL'],
     description: 'Sudadera de entrenamiento Málaga CF temporada 25/26.'
-}
-];
+	}
+	];
 
 const gymProducts = [
     {
-        id: 101,
         name: 'Pantalones Urban Tech Pro',
         price: 30.00,
         category: 'Pantalones Cortos',
@@ -662,7 +641,6 @@ const gymProducts = [
         description: 'Pantalones cortos técnicos para máxima ventilación.'
     },
 	{
-        id: 102,
         name: 'Adidas Vintage Stripe Verde',
         price: 30.00,
         category: 'Streetwear',
@@ -670,5 +648,4 @@ const gymProducts = [
         sizes: ['S', 'M', 'L'],
         description: 'Camiseta de estilo casual con rayas verticales.'
     }
-
 ];

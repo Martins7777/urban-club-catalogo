@@ -389,18 +389,58 @@
             if (view === 'landing') {
                 return (
                     <div className="flex flex-col md:flex-row h-screen w-full overflow-hidden bg-black relative">
-                        <div onClick={() => setView('futbol')} className="relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer overflow-hidden border-b md:border-b-0 md:border-r border-zinc-800">
-                            <div className="absolute inset-0 bg-blue-900/40 z-10 transition-colors group-hover:bg-blue-900/20"></div>
-                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200')] bg-cover bg-center"></div>
-                            <h2 className="relative z-20 h-full flex items-center justify-center text-white text-5xl font-black italic uppercase tracking-tighter transition-transform group-hover:scale-110">Todo Fútbol</h2>
+
+                        {/* Lado Fútbol */}
+                        <div
+                            onClick={() => setView('futbol')}
+                            className="relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer overflow-hidden transition-all duration-500 md:hover:w-[55%]"
+                        >
+                            {/* Overlay oscuro que se aclara al hover */}
+                            <div className="absolute inset-0 bg-blue-900 opacity-50 group-hover:opacity-25 transition-opacity duration-500 z-10"></div>
+                            {/* Imagen con zoom al hover */}
+                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+
+                            <div className="relative z-20 h-full flex flex-col justify-center items-center text-white p-8 text-center">
+                                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter mb-4 drop-shadow-lg">
+                                    Todo Fútbol
+                                </h2>
+                                <p className="text-sm md:text-base font-light tracking-widest uppercase border-b border-white/70 pb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    Equipaciones &amp; Colecciones
+                                </p>
+                                <p className="mt-3 text-xs opacity-0 group-hover:opacity-70 transition-opacity duration-700 max-w-xs">
+                                    Real Madrid · Barcelona · PSG y más
+                                </p>
+                            </div>
                         </div>
 
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 skew-logo z-30 bg-white text-black px-8 py-2 font-black text-2xl uppercase hidden md:block shadow-2xl">Urban Club</div>
+                        {/* Logo central */}
+                        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 hidden md:flex flex-col items-center gap-1 pointer-events-none">
+                            <div className="w-8 h-px bg-white/50"></div>
+                            <span className="text-white text-xl font-black uppercase tracking-[0.35em] opacity-90">Urban Club</span>
+                            <div className="w-8 h-px bg-white/50"></div>
+                        </div>
 
-                        <div onClick={() => setView('gym')} className="relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer overflow-hidden">
-                            <div className="absolute inset-0 bg-zinc-900/60 z-10 transition-colors group-hover:bg-zinc-900/40"></div>
-                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000')] bg-cover bg-center"></div>
-                            <h2 className="relative z-20 h-full flex items-center justify-center text-white text-5xl font-black italic uppercase tracking-tighter transition-transform group-hover:scale-110">Todo Gym</h2>
+                        {/* Lado Gym */}
+                        <div
+                            onClick={() => setView('gym')}
+                            className="relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer overflow-hidden transition-all duration-500 md:hover:w-[55%]"
+                        >
+                            {/* Overlay oscuro que se aclara al hover */}
+                            <div className="absolute inset-0 bg-zinc-900 opacity-60 group-hover:opacity-30 transition-opacity duration-500 z-10"></div>
+                            {/* Imagen con zoom al hover */}
+                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+
+                            <div className="relative z-20 h-full flex flex-col justify-center items-center text-white p-8 text-center">
+                                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter mb-4 drop-shadow-lg">
+                                    Todo Gym
+                                </h2>
+                                <p className="text-sm md:text-base font-light tracking-widest uppercase border-b border-white/70 pb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    Ropa &amp; Accesorios
+                                </p>
+                                <p className="mt-3 text-xs opacity-0 group-hover:opacity-70 transition-opacity duration-700 max-w-xs">
+                                    Entrena con estilo
+                                </p>
+                            </div>
                         </div>
 
                         <CartPanel

@@ -649,3 +649,9 @@ const gymProducts = [
         description: 'Camiseta de estilo casual con rayas verticales.'
     }
 ];
+
+// ─── MUNDIAL ────────────────────────────────────────────────────────────────
+// Añade aquí los productos generados por ChatGPT (pega el array completo)
+const mundialProducts = [
+
+];

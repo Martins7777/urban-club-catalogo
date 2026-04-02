@@ -829,7 +829,7 @@ const mundialProducts = [
         name: 'Perú Mundial 2026',
         price: 30.00,
         category: 'Camisetas',
-        images: ['TODO FUTBOL/Mundial 26/PERU.WORLDCUP.2026.jpg'],
+        images: ['TODO FUTBOL/Mundial 26/PERÚ.WORLDCUP.2026.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Camiseta de Perú para el Mundial 2026.'
     },

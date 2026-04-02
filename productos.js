@@ -5,7 +5,7 @@ const footballProducts = [
         name: 'Real Madrid primera 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['real_madrid_primera.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/real_madrid_primera.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'La equipación clásica del Rey de Europa. Tejido transpirable premium.'
     },
@@ -13,7 +13,7 @@ const footballProducts = [
         name: 'Real Madrid segunda 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['real_madrid_segunda.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/real_madrid_segunda.jpg'],
         sizes: ['M', 'L', 'XL'],
         description: 'Segunda equipación temporada 25/26 con detalles en blanco y patrocinio HP.'
     },
@@ -21,7 +21,7 @@ const footballProducts = [
         name: 'Real Madrid tercera 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['real_madrid_tercera.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/real_madrid_tercera.jpg'],
         sizes: ['M', 'L', 'XL'],
         description: 'Tercera equipación temporada 25/26 con detalles en blanco y patrocinio HP.'
     },
@@ -29,7 +29,7 @@ const footballProducts = [
         name: 'Real Madrid kids 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['real_madrid_kids.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/real_madrid_kids.jpg'],
         sizes: ['M', 'L', 'XL'],
         description: 'Tercera equipación temporada 25/26 con detalles en blanco y patrocinio HP.'
     },
@@ -38,8 +38,8 @@ const footballProducts = [
 		price: 30.00,
 		category: 'Camisetas',
 		images: [
-			'barca_primera.JPG',
-			'barca_primera_2.JPG'
+			'TODO FUTBOL/Barcelona FC/barca_primera.JPG',
+			'TODO FUTBOL/Barcelona FC/barca_primera_2.JPG'
 		],
 		sizes: ['S','M','L','XL','XXL'],
 		description: 'Camiseta FC Barcelona primera equipación 25/26.'
@@ -49,8 +49,8 @@ const footballProducts = [
 		price: 30.00,
 		category: 'Camisetas',
 		images: [
-			'barca_segunda.JPG',
-			'barca_segunda_2.JPG'
+			'TODO FUTBOL/Barcelona FC/barca_segunda.JPG',
+			'TODO FUTBOL/Barcelona FC/barca_segunda_2.JPG'
 		],
 		sizes: ['S','M','L','XL','XXL'],
 		description: 'Camiseta FC Barcelona segunda equipación 25/26.'
@@ -60,17 +60,17 @@ const footballProducts = [
 		price: 30.00,
 		category: 'Camisetas',
 		images: [
-			'barca_tercera_2.JPG',
-			'barca_tercera.JPG'
+			'TODO FUTBOL/Barcelona FC/barca_tercera_2.JPG',
+			'TODO FUTBOL/Barcelona FC/barca_tercera.JPG'
 		],
 		sizes: ['S','M','L','XL','XXL'],
 		description: 'Camiseta FC Barcelona tercera equipación 25/26.'
 	},
-		{
+	{
 		name: 'Barcelona FC kids 25/26',
 		price: 30.00,
 		category: 'Camisetas',
-		images: ['barca_kids.JPG'],
+		images: ['TODO FUTBOL/Barcelona FC/barca_kids.JPG'],
 		sizes: ['S','M','L','XL','XXL'],
 		description: 'Camiseta FC Barcelona kids equipación 25/26.'
 	},
@@ -79,9 +79,9 @@ const footballProducts = [
         price: 30.00,
         category: 'Camisetas',
         images: [
-            'real.madrid.especialredplayer.25-26.jpg',
-            'real.madrid.especialredplayer.partetrasera_25-26.jpg',
-            'Real.madrid.especialredplayer2.0.25-26.jpg'
+            'TODO FUTBOL/Real Madrid CF/real.madrid.especialredplayer.25-26.jpg',
+            'TODO FUTBOL/Real Madrid CF/real.madrid.especialredplayer.partetrasera_25-26.jpg',
+            'TODO FUTBOL/Real Madrid CF/Real.madrid.especialredplayer2.0..25-26.jpg'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Edición Especial Red Player. Calidad premium con acabados profesionales.'
@@ -91,8 +91,8 @@ const footballProducts = [
         price: 30.00,
         category: 'Camisetas',
         images: [
-            'real.madrid.blackorange 25.26.png',
-            'real.madrid.blackorange 2.0.png'
+            'TODO FUTBOL/Real Madrid CF/real.madrid.blackorange 25.26.png',
+            'TODO FUTBOL/Real Madrid CF/real.madrid.blackorange 2.0.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Diseño negro con detalles naranjas y estética agresiva.'
@@ -101,7 +101,7 @@ const footballProducts = [
         name: 'Polo Real Madrid Negro',
         price: 30.00,
         category: 'Streetwear',
-        images: ['black.polo.realmadrid.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/black.polo.realmadrid.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Polo de paseo en negro con estética minimalista y escudo del club.'
     },
@@ -109,7 +109,7 @@ const footballProducts = [
         name: 'Camiseta Real Madrid Black Retro Edition 25/26',
         price: 30.00,
         category: 'Retro Edition',
-        images: ['blackretroedition.25-26. realmadrid.jpeg'],
+        images: ['TODO FUTBOL/Real Madrid CF/blackretroedition.25-26. realmadrid.jpeg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Versión retro en negro con patrón geométrico y detalles clásicos.'
     },
@@ -117,7 +117,7 @@ const footballProducts = [
         name: 'Camiseta Real Madrid Blue Icon 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['blue.icon.realmadrid.25-26.png'],
+        images: ['TODO FUTBOL/Real Madrid CF/blue.icon.realmadrid.25-26.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Edición azul de manga larga con inspiración lifestyle.'
     },
@@ -125,7 +125,7 @@ const footballProducts = [
         name: 'Camiseta Real Madrid Blanca',
         price: 30.00,
         category: 'Camisetas',
-        images: ['cami_realmadrid_blanca_1.jpeg'],
+        images: ['TODO FUTBOL/Real Madrid CF/cami_realmadrid_blanca_1.jpeg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Versión blanca clásica con vivos en cuello y mangas.'
     },
@@ -134,8 +134,8 @@ const footballProducts = [
         price: 30.00,
         category: 'Camisetas',
         images: [
-            'pink.player.edition.25-26 realmadrid.jpg',
-            'pink.player.edition.realmadrid.partetrasera.25-26.jpg'
+            'TODO FUTBOL/Real Madrid CF/pink.player.edition.25-26 realmadrid.jpg',
+            'TODO FUTBOL/Real Madrid CF/pink.player.edition.realmadrid.partetrasera.25-26.jpg'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Player Edition en rosa con patrón chevron y acabado premium.'
@@ -144,7 +144,7 @@ const footballProducts = [
         name: 'Polo Real Madrid Azul',
         price: 30.00,
         category: 'Streetwear',
-        images: ['polo.blue.real madrid.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/polo.blue.real madrid.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Polo azul de paseo con escudo frontal y look casual.'
     },
@@ -152,7 +152,7 @@ const footballProducts = [
         name: 'Polo Real Madrid 25/26 Black',
         price: 30.00,
         category: 'Streetwear',
-        images: ['polo.realmadrid.25-26black.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/polo.realmadrid.25-26black.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Polo negro 25/26 con branding frontal y estilo urbano.'
     },
@@ -160,7 +160,7 @@ const footballProducts = [
         name: 'Polo Real Madrid 26/27 Retro',
         price: 30.00,
         category: 'Streetwear',
-        images: ['polo_realmadrid_retro_26-27.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/polo_realmadrid_retro_26-27.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Polo estampado 26/27 con acabado premium y diseño exclusivo.'
     },
@@ -168,7 +168,7 @@ const footballProducts = [
         name: 'Camiseta Real Madrid Purple Edition 25/26',
         price: 30.00,
         category: 'Camisetas',
-        images: ['purple.edition.25-26 realmadrid.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/purple.edition.25-26 realmadrid.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Edición morada 25/26 con patrón geométrico y detalles dorados.'
     },
@@ -176,9 +176,17 @@ const footballProducts = [
         name: 'Camiseta Real Madrid Training 26/27',
         price: 30.00,
         category: 'Entrenamiento',
-        images: ['trainning.26-27 real madrid.jpg'],
+        images: ['TODO FUTBOL/Real Madrid CF/trainning.26-27 real madrid.jpg'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Camiseta de entrenamiento 26/27 en azul con detalles amarillos.'
+    },
+    {
+        name: 'Camiseta Real Madrid Mandala',
+        price: 30.00,
+        category: 'COLABS',
+        images: ['TODO FUTBOL/Real Madrid CF/madrid.jpeg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta Real Madrid edición especial con diseño mandala.'
     },
 
     // --- COLABS ---
@@ -187,10 +195,10 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'inter de milan x cruz cafune.png',
-            '2 inter de milan x cruz cafune.png',
-            '2 me muevo con dios milanxcruz.png',
-            'detras milan x cruz.png'
+            'TODO FUTBOL/Colabs/inter de milan x cruz cafune.png',
+            'TODO FUTBOL/Colabs/2 inter de milan x cruz cafune.png',
+            'TODO FUTBOL/Colabs/2 me muevo con dios milanxcruz.png',
+            'TODO FUTBOL/Colabs/detras milan x cruz.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Inter de Milan x Cruz Cafuné.'
@@ -200,8 +208,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'ac milan x bad bunny.png',
-            'milan x bbad bunny.png'
+            'TODO FUTBOL/Colabs/ac milan x bad bunny.png',
+            'TODO FUTBOL/Colabs/milan x bbad bunny.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración AC Milan x Bad Bunny.'
@@ -211,8 +219,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'ac milan x bryant myers.png',
-            'ac milan x bryant myers atras.png'
+            'TODO FUTBOL/Colabs/ac milan x bryant myers.png',
+            'TODO FUTBOL/Colabs/ac milan x bryant myers atras.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración AC Milan x Bryant Myers.'
@@ -222,8 +230,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'almeria x rvfv.png',
-            'almeria x rvfv atras.png'
+            'TODO FUTBOL/Colabs/almeria x rvfv.png',
+            'TODO FUTBOL/Colabs/almeria x rvfv atras.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Almería x FVF.'
@@ -233,8 +241,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'anuel aa x paris saint germain.png',
-            'por tras anuelxparis.png'
+            'TODO FUTBOL/Colabs/anuel aa x paris saint germain.png',
+            'TODO FUTBOL/Colabs/por tras anuelxparis.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración PSG x Anuel AA.'
@@ -243,7 +251,7 @@ const footballProducts = [
         name: 'AS Roma x Noriel Trap Capos',
         price: 30.00,
         category: 'COLABS',
-        images: ['as roma x noriel trap capos.png'],
+        images: ['TODO FUTBOL/Colabs/as roma x noriel trap capos.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración AS Roma x Noriel Trap Capos.'
     },
@@ -252,8 +260,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'aston villa x feid ferxo.png',
-            'aston villa x ferxo.png'
+            'TODO FUTBOL/Colabs/aston villa x feid ferxo.png',
+            'TODO FUTBOL/Colabs/aston villa x ferxo.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Aston Villa x Feid Ferxo.'
@@ -263,8 +271,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'at madrid x cano.png',
-            'at madrid x triana tour cano.png'
+            'TODO FUTBOL/Colabs/at madrid x cano.png',
+            'TODO FUTBOL/Colabs/at madrid x triana tour cano.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Atlético de Madrid x Cano.'
@@ -273,7 +281,7 @@ const footballProducts = [
         name: 'Atlético de Madrid x JC Reyes',
         price: 30.00,
         category: 'COLABS',
-        images: ['at madrid x jc reyes.png'],
+        images: ['TODO FUTBOL/Colabs/at madrid x jc reyes.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Atlético de Madrid x JC Reyes.'
     },
@@ -282,8 +290,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'athletic club bilbao x mora.jpeg',
-            'bilbao x mora.jpeg'
+            'TODO FUTBOL/Colabs/athletic club bilbao x mora.jpeg',
+            'TODO FUTBOL/Colabs/bilbao x mora.jpeg'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Athletic Club Bilbao x Mora.'
@@ -293,7 +301,7 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'b junior x trueno.png',
+            'TODO FUTBOL/Colabs/b junior x trueno.png',
             'detras'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
@@ -304,8 +312,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'barca j reyes.png',
-            'barca j reyes detras.png'
+            'TODO FUTBOL/Colabs/barca j reyes.png',
+            'TODO FUTBOL/Colabs/barca j reyes detras.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Barça x J Creyes.'
@@ -314,7 +322,7 @@ const footballProducts = [
         name: 'Bayer de Munich x Anuel AA',
         price: 30.00,
         category: 'COLABS',
-        images: ['bayer de munich x anuel aa.png'],
+        images: ['TODO FUTBOL/Colabs/bayer de munich x anuel aa.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Bayer de Munich x Anuel AA.'
     },
@@ -322,7 +330,7 @@ const footballProducts = [
         name: 'Bichota x Juventus',
         price: 30.00,
         category: 'COLABS',
-        images: ['bichota x juventos.png'],
+        images: ['TODO FUTBOL/Colabs/bichota x juventos.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Juventus x Bichota.'
     },
@@ -330,7 +338,7 @@ const footballProducts = [
         name: 'Boca Juniors x Paulo Londra',
         price: 30.00,
         category: 'COLABS',
-        images: ['boca junior x paulo londra.png'],
+        images: ['TODO FUTBOL/Colabs/boca junior x paulo londra.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Boca Juniors x Paulo Londra.'
     },
@@ -339,9 +347,9 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'boca junior x trueno.png',
-            'trueno x boca junior.png',
-            'detras bocaxtrueno.png'
+            'TODO FUTBOL/Colabs/boca junior x trueno.png',
+            'TODO FUTBOL/Colabs/trueno x boca junior.png',
+            'TODO FUTBOL/Colabs/detras bocaxtrueno.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Boca Juniors x Trueno en variante azul.'
@@ -351,8 +359,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'celta de vigo x c tangana.png',
-            'detras ctangana celta.png'
+            'TODO FUTBOL/Colabs/celta de vigo x c tangana.png',
+            'TODO FUTBOL/Colabs/detras ctangana celta.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Celta de Vigo x C Tangana.'
@@ -361,7 +369,7 @@ const footballProducts = [
         name: 'Celta de Vigo Black x C Tangana',
         price: 30.00,
         category: 'COLABS',
-        images: ['celta vigo black x c tangana.png'],
+        images: ['TODO FUTBOL/Colabs/celta vigo black x c tangana.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Edición black de la colaboración Celta de Vigo x C Tangana.'
     },
@@ -370,8 +378,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'chelsea x kid keo.png',
-            'chelsea x kid keo atras.png'
+            'TODO FUTBOL/Colabs/chelsea x kid keo.png',
+            'TODO FUTBOL/Colabs/chelsea x kid keo atras.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Chelsea x Kid Keo.'
@@ -381,8 +389,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'chelsea x mike towers.png',
-            '23 mike towers chelsea.png'
+            'TODO FUTBOL/Colabs/chelsea x mike towers.png',
+            'TODO FUTBOL/Colabs/23 mike towers chelsea.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Chelsea x Mike Towers.'
@@ -391,7 +399,7 @@ const footballProducts = [
         name: 'Chelsea x Rau Alejandrp',
         price: 30.00,
         category: 'COLABS',
-        images: ['chelsea x rau alejandrp.png'],
+        images: ['TODO FUTBOL/Colabs/chelsea x rau alejandrp.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Chelsea x Rau Alejandrp.'
     },
@@ -399,7 +407,7 @@ const footballProducts = [
         name: 'Dellafuente x Madrid',
         price: 30.00,
         category: 'COLABS',
-        images: ['dellafuente x madrid.png'],
+        images: ['TODO FUTBOL/Colabs/dellafuente x madrid.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Madrid x Dellafuente.'
     },
@@ -408,8 +416,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'españa x topuria.png',
-            'el matadpr.png'
+            'TODO FUTBOL/Colabs/españa x topuria.png',
+            'TODO FUTBOL/Colabs/el matadpr.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración España x Topuria.'
@@ -419,8 +427,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'fc barcelona x travis scott 2000 20001.png',
-            'travis scott x fc b.png'
+            'TODO FUTBOL/Colabs/fc barcelona x travis scott 2000 20001.png',
+            'TODO FUTBOL/Colabs/travis scoot x fc b.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración FC Barcelona x Travis Scott.'
@@ -430,9 +438,9 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'flamengo x dellafuente.png',
-            'flamengo por dellafuente.png',
-            'flamengo x reels b.png'
+            'TODO FUTBOL/Colabs/flamengo x dellafuente.png',
+            'TODO FUTBOL/Colabs/flamengo por dellafuente.png',
+            'TODO FUTBOL/Colabs/flamengo x reels b.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Flamengo x Dellafuente.'
@@ -442,8 +450,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'gran canarias x quevedo.png',
-            'gran canarias x quevedoo.png'
+            'TODO FUTBOL/Colabs/gran canarias x quevedo.png',
+            'TODO FUTBOL/Colabs/gran canarias x quevedoo.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Gran Canarias x Quevedo.'
@@ -453,8 +461,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'granada x saiko.png',
-            'saiko x granada.png'
+            'TODO FUTBOL/Colabs/granada x saiko.png',
+            'TODO FUTBOL/Colabs/saiko x granada.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Granada x Saiko.'
@@ -464,8 +472,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'inter de miami x jhayco.png',
-            'miami por jhayco.png'
+            'TODO FUTBOL/Colabs/inter de miami x jhayco.png',
+            'TODO FUTBOL/Colabs/miami por jhayco.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Inter de Miami x Jhayco.'
@@ -475,8 +483,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'inter miami x myke towers.png',
-            'miami myke towers.png'
+            'TODO FUTBOL/Colabs/inter miami x myke towers.png',
+            'TODO FUTBOL/Colabs/miami myke towers.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Inter Miami x Myke Towers.'
@@ -485,7 +493,7 @@ const footballProducts = [
         name: 'Juventus x Karol G',
         price: 30.00,
         category: 'COLABS',
-        images: ['juventus x karol g.png'],
+        images: ['TODO FUTBOL/Colabs/juventus x karol g.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Juventus x Karol G.'
     },
@@ -493,7 +501,7 @@ const footballProducts = [
         name: 'Madrid 25/26 x Dellafuente',
         price: 30.00,
         category: 'COLABS',
-        images: ['madrid 25-26 x dellafuente.png'],
+        images: ['TODO FUTBOL/Colabs/madrid 25-26 x dellafuente.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Madrid 25/26 x Dellafuente.'
     },
@@ -501,7 +509,7 @@ const footballProducts = [
         name: 'Manchester City x Ozuna',
         price: 30.00,
         category: 'COLABS',
-        images: ['manchester cityx ozuna.png'],
+        images: ['TODO FUTBOL/Colabs/manchester cityx ozuna.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Manchester City x Ozuna.'
     },
@@ -509,7 +517,7 @@ const footballProducts = [
         name: 'Paris x Bad Bunny',
         price: 30.00,
         category: 'COLABS',
-        images: ['paris x bad bunny.png','pais x bad bunny.png'],
+        images: ['TODO FUTBOL/Colabs/paris x bad bunny.png','TODO FUTBOL/Colabs/pais x bad bunny.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Paris x Bad Bunny.'
     },
@@ -517,7 +525,7 @@ const footballProducts = [
         name: 'Real Madrid x Bad Bunny',
         price: 30.00,
         category: 'COLABS',
-        images: ['real madrid x bad bunny.png'],
+        images: ['TODO FUTBOL/Colabs/real madrid x bad bunny.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Real Madrid x Bad Bunny.'
     },
@@ -526,8 +534,8 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'seleccion usa x travis scott.png',
-            'detras seleccion usa.png'
+            'TODO FUTBOL/Colabs/seleccion usa x travis scott.png',
+            'TODO FUTBOL/Colabs/detras seleccion usa.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Selección USA x Travis Scott.'
@@ -536,7 +544,7 @@ const footballProducts = [
         name: 'Tenerife x Cruz Cafune',
         price: 30.00,
         category: 'COLABS',
-        images: ['tenerife x cruz cafune.png'],
+        images: ['TODO FUTBOL/Colabs/tenerife x cruz cafune.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Tenerife x Cruz Cafune.'
     },
@@ -545,98 +553,109 @@ const footballProducts = [
         price: 30.00,
         category: 'COLABS',
         images: [
-            'totteham x mikke towers.png',
-            'totteham x mikke towers detras.png'
+            'TODO FUTBOL/Colabs/totteham x mikke towers.png',
+            'TODO FUTBOL/Colabs/totteham x mikke towers detras.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Tottenham x Mikke Towers.'
     },
 	{
-    name: 'Málaga Primera 25/26',
-    price: 30.00,
-    category: 'Camisetas',
-    images: [
-        'malaga primera 25-26.png'
-    ],
-    sizes: ['S','M','L','XL','XXL'],
-    description: 'Camiseta Málaga CF primera equipación temporada 25/26.'
+        name: 'Málaga Primera 25/26',
+        price: 30.00,
+        category: 'Camisetas',
+        images: [
+            'TODO FUTBOL/Malaga CF/malaga primera 25-26.png'
+        ],
+        sizes: ['S','M','L','XL','XXL'],
+        description: 'Camiseta Málaga CF primera equipación temporada 25/26.'
 	},
 	{
-    name: 'Málaga Segunda 25/26',
-    price: 30.00,
-    category: 'Camisetas',
-    images: [
-        'malaga segunda 25-26.png'
-    ],
-    sizes: ['S','M','L','XL','XXL'],
-    description: 'Camiseta Málaga CF segunda equipación temporada 25/26.'
+        name: 'Málaga Segunda 25/26',
+        price: 30.00,
+        category: 'Camisetas',
+        images: [
+            'TODO FUTBOL/Malaga CF/malaga segunda 25-26.png'
+        ],
+        sizes: ['S','M','L','XL','XXL'],
+        description: 'Camiseta Málaga CF segunda equipación temporada 25/26.'
 	},
 	{
-    name: 'Málaga Tercera 25/26',
-    price: 30.00,
-    category: 'Camisetas',
-    images: [
-        'malaga tercera 25-26.png'
-    ],
-    sizes: ['S','M','L','XL','XXL'],
-    description: 'Camiseta Málaga CF tercera equipación temporada 25/26.'
+        name: 'Málaga Tercera 25/26',
+        price: 30.00,
+        category: 'Camisetas',
+        images: [
+            'TODO FUTBOL/Malaga CF/malaga tercera 25-26.png'
+        ],
+        sizes: ['S','M','L','XL','XXL'],
+        description: 'Camiseta Málaga CF tercera equipación temporada 25/26.'
 	},
 	{
-    name: 'Málaga kids 25/26',
-    price: 30.00,
-    category: 'Camisetas',
-    images: ['malaga_kids.jpg'],
-    sizes: ['S','M','L','XL','XXL'],
-    description: 'Camiseta Málaga CF kids primera equipación temporada 25/26.'
+        name: 'Málaga kids 25/26',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Malaga CF/malaga_kids.jpg'],
+        sizes: ['S','M','L','XL','XXL'],
+        description: 'Camiseta Málaga CF kids primera equipación temporada 25/26.'
 	},
 	{
         name: 'MALAGA X ANUEL',
         price: 30.00,
         category: 'COLABS',
         images: [
-            'anuel x malaga.png',
-            'anuel x malaga detras.png'
+            'TODO FUTBOL/Colabs/anuel x malaga.png',
+            'TODO FUTBOL/Colabs/anuel x malaga detras.png'
         ],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Málaga x Anuel.'
     },
-	    {
+	{
         name: 'MALAGA X DELAOSSA',
         price: 30.00,
         category: 'COLABS',
-        images: ['malaga x delaossa.png', 'malaga x delaossa detras.png'],
+        images: ['TODO FUTBOL/Colabs/malaga x delaossa.png', 'TODO FUTBOL/Colabs/malaga x delaossa detras.png'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         description: 'Colaboración Málaga x Delaossa.'
     },
 	{
-    name: 'Málaga Comic 25/26',
-    price: 30.00,
-    category: 'Camisetas',
-    images: [
-        'malaga comic 25-26.png'
-    ],
-    sizes: ['S','M','L','XL','XXL'],
-    description: 'Camiseta Málaga CF edición especial Comic 25/26.'
+        name: 'MALAGA X ILLO JUAN',
+        price: 30.00,
+        category: 'COLABS',
+        images: [
+            'TODO FUTBOL/Colabs/cami4.jpeg',
+            'TODO FUTBOL/Colabs/cami3.jpeg'
+        ],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Colaboración Málaga CF x Illo Juan.'
+    },
+	{
+        name: 'Málaga Comic 25/26',
+        price: 30.00,
+        category: 'Camisetas',
+        images: [
+            'TODO FUTBOL/Malaga CF/malaga comic 25-26.png'
+        ],
+        sizes: ['S','M','L','XL','XXL'],
+        description: 'Camiseta Málaga CF edición especial Comic 25/26.'
 	},
 	{
-    name: 'Málaga Sudadera Entrenamiento 25/26',
-    price: 30.00,
-    category: 'Entrenamiento',
-    images: [
-        'malaga sudadera entrenamiento 25-26.jpg',
-        'malaga entrenamiento 2.jpg'
-    ],
-    sizes: ['S','M','L','XL','XXL'],
-    description: 'Sudadera de entrenamiento Málaga CF temporada 25/26.'
+        name: 'Málaga Sudadera Entrenamiento 25/26',
+        price: 30.00,
+        category: 'Entrenamiento',
+        images: [
+            'TODO FUTBOL/Malaga CF/malaga sudadera entrenamiento 25-26.jpg',
+            'TODO FUTBOL/Malaga CF/malaga entrenamiento 2.jpg'
+        ],
+        sizes: ['S','M','L','XL','XXL'],
+        description: 'Sudadera de entrenamiento Málaga CF temporada 25/26.'
 	}
-	];
+];
 
 const gymProducts = [
     {
         name: 'Pantalones Urban Tech Pro',
         price: 30.00,
         category: 'Pantalones Cortos',
-        images: ['pantalones.jpg'],
+        images: ['TODO GYM/pantalones.jpg'],
         sizes: ['S', 'M', 'L', 'XL'],
         description: 'Pantalones cortos técnicos para máxima ventilación.'
     },
@@ -644,14 +663,206 @@ const gymProducts = [
         name: 'Adidas Vintage Stripe Verde',
         price: 30.00,
         category: 'Streetwear',
-        images: ['adidas_vintage_verde.jpg'],
+        images: ['TODO GYM/adidas_vintage_verde.jpg'],
         sizes: ['S', 'M', 'L'],
         description: 'Camiseta de estilo casual con rayas verticales.'
     }
 ];
 
-// ─── MUNDIAL ────────────────────────────────────────────────────────────────
-// Añade aquí los productos generados por ChatGPT (pega el array completo)
+// --- MUNDIAL 26 ---
 const mundialProducts = [
-
+    // España (primero)
+	{
+        name: 'España Alternativa Edición Extra',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/españa.jpeg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de España edición alternativa para el Mundial 2026.'
+    },
+    {
+        name: 'España Alternativa Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/ESPAÑA.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de España visitante para el Mundial 2026.'
+    },
+    {
+        name: 'España Local Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/ESPAÑA.HOME.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de España primera equipación para el Mundial 2026.'
+    },
+    {
+        name: 'España Edición Especial Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/cami1.jpeg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de España edición especial para el Mundial 2026.'
+    },
+    // Resto de países (orden alfabético)
+    {
+        name: 'Argentina Local Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/ARGENTINA.HOME.WORLDCUP.2026.png'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Argentina primera equipación para el Mundial 2026.'
+    },
+    {
+        name: 'Argentina Alternativa Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/ARGENTINA.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Argentina visitante para el Mundial 2026.'
+    },
+    {
+        name: 'Argentina Edición Especial Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/cami2.jpeg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Argentina edición especial para el Mundial 2026.'
+    },
+    {
+        name: 'Bélgica Especial Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/BELGIUM.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Bélgica edición especial para el Mundial 2026.'
+    },
+    {
+        name: 'Brasil Local Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/BRASIL.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Brasil primera equipación para el Mundial 2026.'
+    },
+    {
+        name: 'Colombia Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/COLOMBIA.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Colombia para el Mundial 2026.'
+    },
+    {
+        name: 'Emiratos Árabes Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/EMIRATOS.ARAES.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Emiratos Árabes para el Mundial 2026.'
+    },
+    {
+        name: 'Estados Unidos Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/USA.2026.WORLDCUP.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Estados Unidos para el Mundial 2026.'
+    },
+    {
+        name: 'Francia Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/FRANCIA.WORLDCUP.2026.webp'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Francia para el Mundial 2026.'
+    },
+    {
+        name: 'Italia Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/ITALIA.WORLDCUP.2026.jpeg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Italia para el Mundial 2026.'
+    },
+    {
+        name: 'Japón Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/JAPON.WORLDCUP.2026.webp'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Japón para el Mundial 2026.'
+    },
+    {
+        name: 'Mali Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/MALI.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Mali para el Mundial 2026.'
+    },
+    {
+        name: 'Marruecos Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/MARRUECOS.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Marruecos para el Mundial 2026.'
+    },
+    {
+        name: 'México Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/MEXICO.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de México para el Mundial 2026.'
+    },
+    {
+        name: 'Países Bajos Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/NETHERLANDS.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Países Bajos para el Mundial 2026.'
+    },
+    {
+        name: 'Perú Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/PERU.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Perú para el Mundial 2026.'
+    },
+    {
+        name: 'Portugal Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/PORTUGAL.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Portugal para el Mundial 2026.'
+    },
+    {
+        name: 'Qatar Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/QATAR.WORLD.CUP.2026.jpeg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Qatar para el Mundial 2026.'
+    },
+    {
+        name: 'Uruguay Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/URUGUAY.WORLDCUP.2026.jpg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Uruguay para el Mundial 2026.'
+    },
+    {
+        name: 'Venezuela Mundial 2026',
+        price: 30.00,
+        category: 'Camisetas',
+        images: ['TODO FUTBOL/Mundial 26/VENEZUELA.WORLDCUP.2026.jpeg'],
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        description: 'Camiseta de Venezuela para el Mundial 2026.'
+    }
 ];

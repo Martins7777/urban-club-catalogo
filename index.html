@@ -65,7 +65,8 @@
 
         const footballProductsWithIds = withGeneratedIds(footballProducts, 1);
         const gymProductsWithIds = withGeneratedIds(gymProducts, footballProductsWithIds.length + 1);
-        const mundialProductsWithIds = withGeneratedIds(mundialProducts, footballProductsWithIds.length + gymProductsWithIds.length + 1);
+        const mundialProductsWithIds = withGeneratedIds(mundialProducts, footballProductsWithIds.length + gymProductsWithIds.length + 1)
+            .map(p => ({ ...p, _section: 'Mundial 26' }));
         const allFootballProducts = [...footballProductsWithIds, ...mundialProductsWithIds];
 
         const ShoppingBag = () => <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>;
@@ -364,16 +365,17 @@
                 if (view !== 'futbol') return [];
 
                 const grouped = allFootballProducts.reduce((acc, product) => {
-                    const club = detectClubName(product.name);
+                    const club = product._section || detectClubName(product.name);
                     if (!acc[club]) acc[club] = [];
                     acc[club].push(product);
                     return acc;
                 }, {});
 
                 const preferredOrder = ['Real Madrid CF', 'Barcelona FC', 'Málaga FC', 'Alemania', 'Mundial 26', 'Colabs', 'Otros'];
+                const alwaysVisible = new Set(['Mundial 26']);
                 return preferredOrder
-                    .filter(club => grouped[club]?.length)
-                    .map(club => ({ club, products: grouped[club] }));
+                    .filter(club => grouped[club]?.length || alwaysVisible.has(club))
+                    .map(club => ({ club, products: grouped[club] || [] }));
             }, [view]);
 
             const scrollToClubSection = (club) => {
